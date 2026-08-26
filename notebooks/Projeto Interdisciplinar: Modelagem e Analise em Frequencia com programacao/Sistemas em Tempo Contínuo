@@ -1,6 +1,13 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# SISTEMAS EM TEMPO CONTÍNUO (QUESTÕES 1 A 4)"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
@@ -12,8 +19,6 @@
     "\n",
     "w = np.logspace(-2, 2, 1000)\n",
     "H = 1 / (0.5 * (1j * w)**2 + 1j * w + 1)\n",
-    "\n",
-    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
     "\n",
     "# Magnitude\n",
     "plt.figure(figsize=(8, 4))\n",
@@ -40,14 +45,12 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Questão 2 - QUESTÃO DO GRUPO\n",
+    "# Questão 2\n",
     "import numpy as np\n",
     "import matplotlib.pyplot as plt\n",
     "\n",
     "w = np.logspace(-2, 2, 1000)\n",
     "H = ((1j * w) + 1) / ((1j * w)**2 + 3 * (1j * w) + 2)\n",
-    "\n",
-    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
     "\n",
     "# Magnitude\n",
     "plt.figure(figsize=(8, 4))\n",
@@ -81,12 +84,10 @@
     "w = np.logspace(-2, 2, 1000)\n",
     "H = (1j * w) / ((1j * w)**2 + 0.2 * (1j * w) + 1)\n",
     "\n",
-    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
-    "\n",
     "# Magnitude\n",
     "plt.figure(figsize=(8, 4))\n",
     "plt.semilogx(w, 20 * np.log10(np.abs(H)), 'b')\n",
-    "plt.title('Questão 3: Magnitude (dB) - Foco no Pico de Ressonância')\n",
+    "plt.title('Questão 3: Magnitude (dB) - Pico de Ressonância')\n",
     "plt.xlabel('Frequência (rad/s)')\n",
     "plt.ylabel('Magnitude (dB)')\n",
     "plt.grid(True, which=\"both\", ls=\"-\")\n",
@@ -100,6 +101,43 @@
     "plt.ylabel('Fase (rad)')\n",
     "plt.grid(True, which=\"both\", ls=\"-\")\n",
     "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Questão 4\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "t0 = 0.1\n",
+    "w = np.logspace(-2, 2, 1000)\n",
+    "H_mag = 1 / (1j * w + 2)\n",
+    "\n",
+    "# Magnitude\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, 20 * np.log10(np.abs(H_mag)), 'b')\n",
+    "plt.title('Questão 4: Magnitude (dB) para qualquer t0')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Magnitude (dB)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()\n",
+    "\n",
+    "# Fase para variados t0\n",
+    "for i in range(0, 3):\n",
+    "    t0_novo = t0 + i\n",
+    "    H_novo = 1 / (1j * w + 2) * np.exp(-1j * w * t0_novo)\n",
+    "\n",
+    "    plt.figure(figsize=(8, 3))\n",
+    "    plt.semilogx(w, np.angle(H_novo), 'g')\n",
+    "    plt.title(f'Questão 4: Fase (rad) | t0 = {t0_novo}')\n",
+    "    plt.xlabel('Frequência (rad/s)')\n",
+    "    plt.ylabel('Fase (rad)')\n",
+    "    plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "    plt.show()"
    ]
   }
  ],
