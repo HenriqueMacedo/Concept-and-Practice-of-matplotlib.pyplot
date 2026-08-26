@@ -1,0 +1,113 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Questão 1\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "w = np.logspace(-2, 2, 1000)\n",
+    "H = 1 / (0.5 * (1j * w)**2 + 1j * w + 1)\n",
+    "\n",
+    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
+    "\n",
+    "# Magnitude\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, 20 * np.log10(np.abs(H)), 'b')\n",
+    "plt.title('Questão 1: Magnitude (dB)')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Magnitude (dB)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()\n",
+    "\n",
+    "# Fase\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, np.angle(H), 'g')\n",
+    "plt.title('Questão 1: Fase (rad)')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Fase (rad)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Questão 2 - QUESTÃO DO GRUPO\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "w = np.logspace(-2, 2, 1000)\n",
+    "H = ((1j * w) + 1) / ((1j * w)**2 + 3 * (1j * w) + 2)\n",
+    "\n",
+    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
+    "\n",
+    "# Magnitude\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, 20 * np.log10(np.abs(H)), 'b')\n",
+    "plt.title('Questão 2: Magnitude (dB)')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Magnitude (dB)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()\n",
+    "\n",
+    "# Fase\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, np.angle(H), 'g')\n",
+    "plt.title('Questão 2: Fase (rad)')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Fase (rad)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Questão 3\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "w = np.logspace(-2, 2, 1000)\n",
+    "H = (1j * w) / ((1j * w)**2 + 0.2 * (1j * w) + 1)\n",
+    "\n",
+    "print(\"Exibição dos gráficos de magnitude e fase: \\n\" + \"-\" * 70)\n",
+    "\n",
+    "# Magnitude\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, 20 * np.log10(np.abs(H)), 'b')\n",
+    "plt.title('Questão 3: Magnitude (dB) - Foco no Pico de Ressonância')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Magnitude (dB)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()\n",
+    "\n",
+    "# Fase\n",
+    "plt.figure(figsize=(8, 4))\n",
+    "plt.semilogx(w, np.angle(H), 'g')\n",
+    "plt.title('Questão 3: Fase (rad)')\n",
+    "plt.xlabel('Frequência (rad/s)')\n",
+    "plt.ylabel('Fase (rad)')\n",
+    "plt.grid(True, which=\"both\", ls=\"-\")\n",
+    "plt.show()"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
